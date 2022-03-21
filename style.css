@@ -19,6 +19,7 @@ a {
 }
 h1 {
   line-height: 1.4;
+  padding: 0.1rem;
 }
 
 .btn {
@@ -36,7 +37,7 @@ h1 {
 }
 
 .screen.up {
-  margin-top: -200vh;
+  margin-top: 100vh;
 }
 
 /* MAIN SCREEN */
@@ -44,6 +45,8 @@ h1 {
 .screen.screen.main-screen h1 {
   color: #53aff4;
   letter-spacing: 1.9px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.192);
 }
 
@@ -122,6 +125,9 @@ h1 {
 
 .choose-sword-btn p {
   position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* to put the text in the middle*/
   padding-left: 1rem;
   z-index: 1;
 }
@@ -139,24 +145,68 @@ h1 {
   position: relative;
 }
 
-.game-container h3 {
+.time,
+.score {
   position: absolute;
   top: 0;
   padding: 20px;
 }
 
-.game-container h3.time {
+.time {
   left: 0;
 }
 
-.game-container h3.score {
+.score {
   right: 0;
 }
 
-.game-container h5.message {
-  /* opacity: 0; */
+.message {
+  opacity: 0;
+  line-height: 1.7;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  z-index: 100;
+  text-align: center;
   margin-bottom: 25rem;
   box-shadow: 2px 2px 25px rgba(122, 122, 122, 0.233);
   width: 100%;
-  padding: 2rem;
+
+  /*Putting outside of the screen to make a animation */
+  /* position: absolute;
+  top: 0;
+  right: 50%; */
+  /* transform: translate(-150%, -50%);  */
+  /* transition: transform 1s ease-in; */
+}
+
+.message.visible {
+  opacity: 1;
+}
+
+.enemy {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.5s ease-out;
+
+  /* RANDOM POSITION */
+  /* top: 500px;
+  left: 500px; */
+}
+
+.enemy.dead {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.enemy img {
+  /* border-radius: 50%; */
+  border-top-right-radius: 100%;
+  border-top-left-radius: 100%;
+  width: 80px;
+  height: 80px;
 }
