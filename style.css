@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.205);
+  color: #fff;
+  font-family: 'Press Start 2P', sans-serif;
+  margin: 0;
+  text-align: center;
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+a {
+  color: #fff;
+}
+h1 {
+  line-height: 1.4;
+}
+
+.btn {
+  border: 0;
+  font-family: inherit;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.screen.up {
+  margin-top: -200vh;
+}
+
+/* MAIN SCREEN */
+
+.screen.screen.main-screen h1 {
+  color: #53aff4;
+  letter-spacing: 1.9px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.192);
+}
+
+.screen.main-screen {
+  background-image: url('./imgs/allswords.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  /* z-index: -2; */
+}
+.screen.screen.main-screen::before {
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./imgs/allswords.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  z-index: -1;
+}
+
+.screen.main-screen .btn {
+  background-color: rgba(7, 64, 114, 0.781);
+  color: #fff;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.9);
+  margin-top: 6rem;
+  padding: 1.2rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.screen.main-screen .btn:hover {
+  opacity: 0.9;
+  background-color: #53aff4;
+  /* make an effect in the click button*/
+}
+
+/* CHOOSE SCREEN */
+
+.sword-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.sword-list li {
+  padding: 0.5rem;
+}
+
+.choose-sword-btn {
+  background-color: transparent;
+  border: 0.2rem solid #53aff4;
+  padding: 0;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0;
+  width: 250px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.choose-sword-btn:hover {
+  background-color: #fff;
+  color: #53aff4;
+}
+
+.choose-sword-btn:active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.choose-sword-btn p {
+  position: absolute;
+  padding-left: 1rem;
+  z-index: 1;
+}
+
+.choose-sword-btn img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  /* 232 × 242 px */
+}
+
+/* THE LAST AND GAME SCREEN */
+
+.game-container {
+  position: relative;
+}
+
+.game-container h3 {
+  position: absolute;
+  top: 0;
+  padding: 20px;
+}
+
+.game-container h3.time {
+  left: 0;
+}
+
+.game-container h3.score {
+  right: 0;
+}
+
+.game-container h5.message {
+  /* opacity: 0; */
+  margin-bottom: 25rem;
+  box-shadow: 2px 2px 25px rgba(122, 122, 122, 0.233);
+  width: 100%;
+  padding: 2rem;
+}
