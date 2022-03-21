@@ -11,7 +11,7 @@ body {
   margin: 0;
   text-align: center;
   height: 100vh;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 a {
@@ -37,7 +37,7 @@ h1 {
 }
 
 .screen.up {
-  margin-top: 100vh;
+  margin-top: -100vh;
 }
 
 /* MAIN SCREEN */
