@@ -4,14 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> -->
     <link rel="stylesheet" href="./style.css" />
     <title>Project Stormlight Archive</title>
   </head>
   <body>
+    <!-- audio -->
+    <button id="toggle-sound" class="on">SOUND ON</button>
+    <audio
+      id="audio-intro"
+      src="./Songs/intro.mp3"
+      autoplay="true"
+      preload="auto"
+      loop="true"
+    ></audio>
+
     <div class="screen main-screen">
       <h1>Stormlight Archive Project</h1>
       <button class="btn" id="start-game">Play Game</button>
+      <footer class="footer">Made By: Gustavo Henrique Bernardo</footer>
     </div>
 
     <div class="screen">
@@ -20,29 +37,15 @@
       <ul class="sword-list">
         <li>
           <button class="sword choose-sword-btn">
-            <p >Sword 1 </p>
-            <img src="./imgs/sword1.jpg" alt="Sword1" />
+            <p>Sword 1</p>
+            <img src="./imgs/Test/sword1.png" alt="Sword1" />
           </button>
         </li>
 
         <li>
           <button class="sword choose-sword-btn">
             <p>Sword 1</p>
-            <img src="./imgs/sword2.jpg" alt="Sword2" />
-          </button>
-        </li>
-
-        <li>
-          <button class="sword choose-sword-btn">
-            <p>Sword 1</p>
-            <img src="./imgs/sword1.jpg" alt="Sword1" />
-          </button>
-        </li>
-
-        <li>
-          <button class="sword choose-sword-btn">
-            <p>Sword 1</p>
-            <img src="./imgs/sword2.jpg" alt="Sword2" />
+            <img src="./imgs/Test/sword2.png" alt="Sword2" />
           </button>
         </li>
       </ul>
@@ -55,8 +58,8 @@
 
       <!-- <div class="enemy dead">
         <img src="./imgs/parshendi.webp" alt="" />
-      </div>
-    </div> -->
+      </div> -->
+    </div>
 
     <script src="./app.js"></script>
   </body>
