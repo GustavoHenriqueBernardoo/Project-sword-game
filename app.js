@@ -13,16 +13,18 @@ const audioBtn = document.getElementById('toggle-sound')
 let score = 0
 let seconds = 0
 
-// const audio = new Audio("./Songs/intro.mp3")
-audio.play()
+
+// Setting the audio volume to 20% as default
 audio.volume = 0.2
 
+// Event listener to toggle on and off the music
 audioBtn.addEventListener('click', () => {
   audioBtn.classList.toggle('off')
   if (audioBtn.classList.contains('off')) {
-    audioBtn.innerText = 'SOUND Off'
+    audioBtn.innerText = 'SOUND OFF'
     audio.pause()
   } else {
+    audioBtn.classList.add('on')
     audio.play()
     audioBtn.innerText = 'SOUND ON'
 
@@ -30,9 +32,11 @@ audioBtn.addEventListener('click', () => {
 })
 
 
-// Play game section
+// adding the class UP when the player clicked in Play Game
+// The class up here change the margin top to -100vh, changing the actual screen to the next one
 play_game_btn.addEventListener('click', () => screensEL[0].classList.add('up'))
 
+// Select one of the two swords
 chooseBtn.forEach(sword => {
   console.log(sword)
   sword.addEventListener('click', () => {
@@ -50,6 +54,7 @@ chooseBtn.forEach(sword => {
   })
 })
 
+// starting the time
 function startGame() {
   setInterval(increaseTime, 1000)
 }
@@ -66,6 +71,7 @@ function increaseTime() {
 function createEnemy() {
   const enemy = document.createElement('div')
   enemy.classList.add('enemy')
+  //Using destructuring to get the position X and Y of the function
   const { x, y } = getRandomLocation()
   enemy.style.top = `${y}px`
   enemy.style.left = `${x}px`
@@ -80,9 +86,11 @@ function getRandomLocation() {
   const height = window.innerHeight
   const x = Math.random() * (width - 200) + 100
   const y = Math.random() * (height - 200) + 100
+  // Returning an object with random position of x and y
   return { x, y }
 }
 
+// When the enemy is clicked is === killed
 function killEnemy() {
   increaseScore()
   this.classList.add('dead')
@@ -98,7 +106,7 @@ function addMoreEnemies() {
 function increaseScore() {
   score++
   scoreEL.innerHTML = `Score: ${score}`
-  if (score > 1) {
+  if (score > 10) {
     messageEL.classList.add('visible')
     messageEL.innerText = `You kill 10 enemies, now things will get more difficult!`
     addMoreEnemies()

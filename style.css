@@ -38,6 +38,7 @@ h1 {
 
 .screen.up {
   margin-top: -100vh;
+  transition: margin 2s ease-in-out;
 }
 
 /* MAIN SCREEN */
@@ -90,14 +91,16 @@ h1 {
 }
 
 .screen.main-screen .btn:hover {
-  opacity: 0.9;
-  background-color: #53aff4;
+  background-color: #0a64a4;
   /* make an effect in the click button*/
+  transform: translateY(5px);
+  box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.9);
+
+  /* transition: transform 2s ease-in-out; */
 }
 
 #toggle-sound {
   line-height: 1.5;
-  position: absolute;
   position: absolute;
   text-align: inherit;
   font-family: inherit;
@@ -107,7 +110,8 @@ h1 {
   padding: 25px 60px;
   margin: 20px;
   border-radius: 20px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+  border: none;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.672);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,6 +125,11 @@ button.on {
 
 button.off {
   background-color: rgb(158, 24, 0);
+}
+
+#toggle-sound:hover {
+  transform: translateY(3px);
+  box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.9);
 }
 
 /* CHOOSE SCREEN */
@@ -149,11 +158,14 @@ button.off {
   height: 250px;
   position: relative;
   overflow: hidden;
+  box-shadow: 2px 2px 2px #252d34;
 }
 
 .choose-sword-btn:hover {
   background-color: #fff;
   color: #53aff4;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
 }
 
 .choose-sword-btn:active {
@@ -167,6 +179,8 @@ button.off {
   transform: translate(-50%, -50%); /* to put the text in the middle*/
   padding-left: 1rem;
   z-index: 1;
+  line-height: 1.5;
+  font-weight: bold;
 }
 
 .choose-sword-btn img {
